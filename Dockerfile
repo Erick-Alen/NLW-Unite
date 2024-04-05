@@ -1,5 +1,5 @@
 #defining base image
-FROM node:20 as base
+FROM node:20 AS base
 
 #installing pnpm globally
 RUN npm i -g pnpm
@@ -9,7 +9,7 @@ FROM base AS dependencies
 #defining working directory
 WORKDIR /usr/src/app
 
-COPY package.json pnpm.lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install
 
@@ -23,7 +23,7 @@ COPY --from=dependencies /usr/src/app/node_modules ./node_modules
 RUN pnpm build
 RUN pnpm prune --prod
 
-FROM node:20-alpine3.19 as deploy
+FROM node:20-alpine3.19 AS deploy
 
 WORKDIR /usr/src/app
 
@@ -32,7 +32,7 @@ RUN npm i -g pnpm prisma
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/package.json ./package.json
-COPY --from=build /usr/src/app/PRISMA ./PRISMA
+COPY --from=build /usr/src/app/prisma ./prisma
 
 RUN pnpm prisma generate
 
