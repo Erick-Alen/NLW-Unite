@@ -34,4 +34,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name:
       run: |
-      docker push alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }}
+        docker push alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }}
