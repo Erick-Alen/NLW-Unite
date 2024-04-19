@@ -29,7 +29,6 @@ jobs:
     - name: Log into the container registry
       run: docker/login-action@v2
       with:
-        registry: ghcr.io
         username: ${{ secrets.DOCKERHUB_USERNAME}}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name:
