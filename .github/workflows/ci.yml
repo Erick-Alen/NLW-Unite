@@ -20,7 +20,7 @@ jobs:
     - name: Generate sha
       id: generate_sha
       run: |
-        SHA=$(echo @GITHUB_SHA | head -c7)
+        SHA=$(echo $GITHUB_SHA | head -c7)
         echo "SHA=${SHA}" >> $GITHUB_OUTPUT
 
     - name: Build docker image
