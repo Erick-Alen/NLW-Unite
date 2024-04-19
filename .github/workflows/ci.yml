@@ -34,3 +34,5 @@ jobs:
     - name:
       run: |
         docker push alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }}
+        docker tag alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }} alenerick/nlw.service.passin:latest
+        docker push alenerick/nlw.service.passin:latest
