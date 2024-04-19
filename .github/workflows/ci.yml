@@ -25,3 +25,13 @@ jobs:
 
     - name: Build docker image
       run: docker build -t alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }} .
+
+    - name: Log into the container registry
+      run: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ secrets.DOCKERHUB_USERNAME}}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name:
+      run: |
+      docker push alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }}
