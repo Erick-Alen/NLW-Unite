@@ -45,4 +45,4 @@ jobs:
         propertyPath: 'image.tag'
         value: ${{ steps.generate_sha.outputs.sha }}
         commitChange: true
-        message: 'new: Updated tag to ${{ steps.generate_sha.outputs.sha }} in values helm'
+        message: 'new: Updated tag in values helm'
