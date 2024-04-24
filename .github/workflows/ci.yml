@@ -40,7 +40,7 @@ jobs:
     - name: YAML Update Action
       uses: fjogeleit/yaml-update-action@v0.14.0
       with:
-        github_token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+        token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
         branch: main
         valueFile: 'deploy/values.yaml'
         propertyPath: 'image.tag'
