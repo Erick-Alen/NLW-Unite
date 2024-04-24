@@ -37,8 +37,8 @@ jobs:
         docker tag alenerick/nlw.service.passin:${{ steps.generate_sha.outputs.sha }} alenerick/nlw.service.passin:latest
         docker push alenerick/nlw.service.passin:latest
 
-    - name: Update image tag
-      uses: fjogeleit/yaml-update-action@main
+    - name: YAML Update Action
+      uses: fjogeleit/yaml-update-action@v0.14.0
       with:
         branch: main
         valueFile: 'deploy/values.yaml'
