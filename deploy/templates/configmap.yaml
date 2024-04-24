@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: passin-configmap
+  namespace: nlw-helm
+data:
+  API_BASE_URL: 'http://localhost:3333'
+  DATABASE_URL: 'postgresql://doadmin:AVNS_jCyUOkH1hP-x_0KvyVe@nlw-unite-do-user-16391103-0.c.db.ondigitalocean.com:25060/nlw-unite?sslmode=require'
+  POSTGRES_PORT: '3333'
+  POSTGRES_USER: 'admin'
+  POSTGRES_PASSWORD: 'admin'
+  POSTGRES_DB: 'nlw-unite'
