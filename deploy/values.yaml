@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   repository: alenerick/nlw.service.passin
   pullPolicy: Always
-  tag: 5db3b87
+  tag: 1b8584f
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
