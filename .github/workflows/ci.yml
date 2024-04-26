@@ -38,6 +38,7 @@ jobs:
         docker push alenerick/nlw.service.passin:latest
 
     - name: YAML Update Action
+      if: "github.actor != 'github-actions[bot]'"
       uses: fjogeleit/yaml-update-action@main
       with:
         token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
