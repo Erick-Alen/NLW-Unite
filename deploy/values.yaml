@@ -29,8 +29,23 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
+startupProbe:
   httpGet:
-    path: /health
+    path: /healthz
+    port: http
+  initialDelaySeconds: 40
+  failureThreshold: 5
+  periodSeconds: 10
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: http
+  initialDelaySeconds: 60
+  failureThreshold: 5
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /healthz
     port: http
   initialDelaySeconds: 60
   failureThreshold: 5
