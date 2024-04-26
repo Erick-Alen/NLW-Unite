@@ -29,21 +29,21 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-startupProbe:
-  httpGet:
-    path: /health
-    port: http
-  initialDelaySeconds: 40
-  failureThreshold: 5
-  periodSeconds: 10
-livenessProbe:
-  httpGet:
-    path: /health
-    port: http
-  initialDelaySeconds: 60
-  failureThreshold: 5
-  periodSeconds: 10
-readinessProbe:
+# startupProbe:
+#   httpGet:
+#     path: /health
+#     port: http
+#   initialDelaySeconds: 40
+#   failureThreshold: 5
+#   periodSeconds: 10
+# livenessProbe:
+#   httpGet:
+#     path: /health
+#     port: http
+#   initialDelaySeconds: 60
+#   failureThreshold: 5
+#   periodSeconds: 10
+# readinessProbe:
   httpGet:
     path: /health
     port: http
