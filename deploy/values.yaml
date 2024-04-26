@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   repository: alenerick/nlw.service.passin
   pullPolicy: Always
-  tag: 0be6578
+  tag: d30c42e
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
@@ -29,27 +29,6 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-startupProbe:
-  httpGet:
-    path: /health
-    port: http
-  initialDelaySeconds: 40
-  failureThreshold: 5
-  periodSeconds: 10
-livenessProbe:
-  httpGet:
-    path: /health
-    port: http
-  initialDelaySeconds: 60
-  failureThreshold: 5
-  periodSeconds: 10
-readinessProbe:
-  httpGet:
-    path: /health
-    port: http
-  initialDelaySeconds: 60
-  failureThreshold: 5
-  periodSeconds: 10
 resources:
   requests:
     memory: 512Mi
